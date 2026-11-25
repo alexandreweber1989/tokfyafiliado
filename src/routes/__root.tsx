@@ -81,8 +81,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Loopa — Vídeos infinitos com IA" },
-      { name: "description", content: "Gere vídeos infinitos com IA para suas redes." },
+      { title: "Tokfy — Automação de vendas por WhatsApp com IA" },
+      { name: "description", content: "Tokfy automatiza seus disparos de WhatsApp com IA para você vender mais todo dia. Assine pela Kirvano." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
