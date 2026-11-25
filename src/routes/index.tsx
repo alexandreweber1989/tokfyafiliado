@@ -79,7 +79,7 @@ function Hero() {
             A Tokfy reúne em um só lugar tudo para vender por vídeo: produtos em alta, vídeos UGC com IA, imagens, roteiros, narrações e análise de criativos. Sem aparecer e sem equipe de produção.
           </p>
           <div className="flex flex-col gap-5 sm:flex-row items-center">
-            <CtaButton className="glow-neon border-gradient shadow-[0_0_40px_var(--neon-primary)/35] text-primary-foreground">Começar a criar <ArrowRight className="h-5 w-5" /></CtaButton>
+            <CtaButton className="glow-neon shadow-[0_0_40px_var(--neon-primary)/35] text-primary-foreground">Começar a criar <ArrowRight className="h-5 w-5" /></CtaButton>
             <a href="#como-funciona" className="inline-flex items-center justify-center rounded-full border border-white/35 bg-white/10 px-8 py-4 font-bold backdrop-blur hover:bg-white/25 hover:text-foreground transition-all hover:scale-105">Como funciona</a>
           </div>
         </div>
@@ -311,7 +311,7 @@ function Index() {
                     </li>
                   ))}
                 </ul>
-                <CtaButton secondary={!p.popular} className={`w-full ${p.popular ? "glow-neon border-gradient text-primary-foreground shadow-[0_0_30px_var(--neon-primary)/35]" : "border-border"}`}>Ver preço e assinar</CtaButton>
+                <CtaButton secondary={!p.popular} className={`w-full ${p.popular ? "glow-neon text-primary-foreground shadow-[0_0_30px_var(--neon-primary)/35]" : "border-border"}`}>Ver preço e assinar</CtaButton>
               </article>
             ))}
           </div>
