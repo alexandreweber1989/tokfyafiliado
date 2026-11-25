@@ -60,8 +60,45 @@ export const analysis = [
 ];
 
 export const plans = [
-  { name: "Mensal", desc: "Para começar a criar e testar produtos.", items: ["Vídeos de até 8 segundos", "Resolução 720p", "Ferramentas de criação com IA", "TokPoints conforme o pacote"], popular: false },
-  { name: "Anual", desc: "Para quem produz em volume e quer mais qualidade.", items: ["Vídeos de até 30 segundos", "Resolução de até 1080p", "Recursos extras da plataforma", "TokPoints conforme o pacote"], popular: true },
+  { name: "Mensal", price: "R$ 97/mês", desc: "Para começar a criar e testar produtos.", items: ["Vídeos de até 8 segundos", "Resolução 720p", "Ferramentas de criação com IA", "TokPoints conforme o pacote"], popular: false },
+  { name: "Anual", price: "R$ 67/mês", desc: "Para quem produz em volume e quer mais qualidade.", items: ["Vídeos de até 30 segundos", "Resolução de até 1080p", "Recursos extras da plataforma", "TokPoints conforme o pacote"], popular: true },
+];
+
+export const payments = [
+  { label: "Pix", hint: "À vista e imediato" },
+  { label: "Cartão de crédito", hint: "Em até 12x" },
+];
+
+export const guarantee = "Garantia incondicional de 7 dias. Se não gostar, devolvemos 100% do seu dinheiro.";
+
+export const testimonials = [
+  {
+    name: "Carla M.",
+    role: "Afiliada TikTok Shop",
+    avatar: "https://i.pravatar.cc/150?u=carla",
+    quote: "Fiz 15 variações de criativos em 20 minutos pro TikTok Shop e escalei o produto sem gravar nada.",
+    result: "+3x de conversão",
+  },
+  {
+    name: "Renato S.",
+    role: "Lojista de moda",
+    avatar: "https://i.pravatar.cc/150?u=renato",
+    quote: "Coloquei a foto da peça, a Tokfy gerou o vídeo 9:16 com narração e publiquei no mesmo dia.",
+    result: "Venda recorrente",
+  },
+  {
+    name: "Juliana P.",
+    role: "Agência de tráfego",
+    avatar: "https://i.pravatar.cc/150?u=juliana",
+    quote: "Atendo vários clientes com variações de criativos em volume. Economizei dias de edição.",
+    result: "-80% de tempo",
+  },
+];
+
+export const trustBadges = [
+  { label: "Kirvano", desc: "Pagamento seguro" },
+  { label: "SSL", desc: "Conexão criptografada" },
+  { label: "7 dias", desc: "Garantia incondicional" },
 ];
 
 export const fitYes = ["Produz muitos vídeos", "Trabalha com TikTok Shop", "É afiliado", "Não quer aparecer", "Precisa testar vários produtos", "Quer centralizar ferramentas"];

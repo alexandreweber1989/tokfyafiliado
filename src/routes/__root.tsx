@@ -81,8 +81,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tokfy — Automação de vendas por WhatsApp com IA" },
-      { name: "description", content: "Tokfy automatiza seus disparos de WhatsApp com IA para você vender mais todo dia. Assine pela Kirvano." },
+      { title: "Tokfy — Vídeos UGC com IA para TikTok Shop e afiliados" },
+      { name: "description", content: "Tokfy cria vídeos UGC, imagens, roteiros e narrações com IA para afiliados, lojistas e criadores venderem no TikTok Shop sem precisar aparecer." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },

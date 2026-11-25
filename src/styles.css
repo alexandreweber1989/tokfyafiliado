@@ -241,6 +241,14 @@
     linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: 28px 28px;
 }
+@utility spotlight-border {
+  border: 1px solid var(--border);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+@utility spotlight-border:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
 @utility dots-bg {
   background-image: radial-gradient(var(--grid-color) 1px, transparent 1px);
   background-size: 20px 20px;
@@ -251,6 +259,8 @@
   mask-position: -100% 0;
   animation: text-reveal 2s ease-in-out infinite;
 }
+@keyframes marquee-slow { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+@utility animate-marquee-slow { animation: marquee-slow 40s linear infinite; }
 
 @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
 @utility animate-marquee { animation: marquee 30s linear infinite; }
@@ -346,6 +356,6 @@
 @utility animate-blob { animation: blob 8s ease-in-out infinite; }
 @utility animate-gradient-x { background-size: 200% 200%; animation: gradient-x 5s ease infinite; }
 @utility animate-gradient-xy { background-size: 300% 300%; animation: gradient-xy 7s ease infinite; }
-@utility animate-spin-reverse { animation: spin-reverse 14s linear infinite; }
+
 @utility animate-float-vertical { animation: float-vertical 7s ease-in-out infinite; }
 @utility animate-text-reveal { animation: text-reveal 3s ease-in-out infinite; }
