@@ -173,7 +173,7 @@ function Index() {
             <div className="rounded-lg bg-primary p-2">
               <Sparkles className="h-5 w-5 text-primary-foreground" aria-hidden />
             </div>
-            <span className="font-display text-xl font-extrabold tracking-tight">tokfy<span className="text-primary">⚡</span></span>
+            <span className="font-display text-xl font-extrabold tracking-tight">Tokfy<span className="text-primary">⚡</span></span>
           </div>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             {navLinks.map((l) => (
@@ -487,7 +487,7 @@ function Index() {
             <div className="rounded-lg bg-primary p-1.5">
               <Sparkles className="h-4 w-4 text-primary-foreground" aria-hidden />
             </div>
-            <span className="font-display font-bold text-sm tracking-tight">tokfy<span className="text-primary">⚡</span></span>
+            <span className="font-display font-bold text-sm tracking-tight">Tokfy<span className="text-primary">⚡</span></span>
           </div>
           <p className="text-xs">
             Produto independente vendido por afiliado. Pagamento e entrega processados pela{" "}
