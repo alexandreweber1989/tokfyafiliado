@@ -244,10 +244,10 @@
 @utility spotlight-border {
   border: 1px solid var(--border);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-@utility spotlight-border:hover {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 1px var(--primary);
+  &:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1px var(--primary);
+  }
 }
 @utility dots-bg {
   background-image: radial-gradient(var(--grid-color) 1px, transparent 1px);
