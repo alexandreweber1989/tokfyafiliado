@@ -170,7 +170,7 @@ function Index() {
       <header className="sticky top-0 z-50 mx-auto max-w-6xl px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="rounded-lg bg-primary p-2">
+            <div className="rounded-lg bg-primary p-2 animate-float">
               <Sparkles className="h-5 w-5 text-primary-foreground" aria-hidden />
             </div>
             <span className="font-display text-xl font-extrabold tracking-tight">Tokfy<span className="text-primary">⚡</span></span>
@@ -191,21 +191,22 @@ function Index() {
 
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-32 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[radial-gradient(600px_circle_at_10%_-20%,var(--primary-glow)_0%,transparent_50%)] opacity-30" />
+        <div className="absolute inset-0 bg-grid opacity-20" />
+        <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[radial-gradient(600px_circle_at_10%_-20%,var(--primary-glow)_0%,transparent_50%)] opacity-30 animate-pulse-glow" />
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-primary">
+            <div className="flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-primary animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
               <span className="relative flex h-2 w-2 rounded-full bg-primary animate-pulse" />
               <span>Já ajudou +10 mil empreendedores a vender pelo WhatsApp</span>
             </div>
-            <h1 className="font-display text-4xl font-extrabold leading-tight md:text-6xl">
+            <h1 className="font-display text-4xl font-extrabold leading-tight md:text-6xl animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               Venda mais pelo <br />
               <span className="text-gradient">WhatsApp, no piloto automático.</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-md md:max-w-lg leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-md md:max-w-lg leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
               O Tokfy automatiza seus disparos de WhatsApp com inteligência artificial: você encontra os contatos, ele dispara, nutre e fecha a venda para você. Sem ser bloqueado, sem trabalho manual.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
               <CtaButton>
                 Começar a vender agora <ArrowRight className="ml-2 h-4 w-4" />
               </CtaButton>
@@ -213,7 +214,7 @@ function Index() {
                 Como funciona
               </a>
             </div>
-            <div className="grid grid-cols-3 gap-4 text-sm text-muted-foreground border-t border-border pt-6">
+            <div className="grid grid-cols-3 gap-4 text-sm text-muted-foreground border-t border-border pt-6 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
               <div>
                 <div className="text-foreground font-bold">+10 mil</div>
                 <div className="text-xs">usuários ativos</div>
@@ -228,8 +229,8 @@ function Index() {
               </div>
             </div>
           </div>
-          <div className="relative h-[500px] w-full lg:h-[600px] flex items-center justify-center rounded-2xl p-2 bg-card ring-1 ring-border">
-            <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-r from-primary via-accent to-primary -mx-[1px] -my-[1px] blur opacity-25 rounded-2xl mask mask-[linear-gradient(180deg,#000_60%,transparent)]" />
+          <div className="relative h-[500px] w-full lg:h-[600px] flex items-center justify-center rounded-2xl p-2 bg-card ring-1 ring-border animate-float" style={{ animationDelay: "0.2s" }}>
+            <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-r from-primary via-accent to-primary -mx-[1px] -my-[1px] blur opacity-25 rounded-2xl mask mask-[linear-gradient(180deg,#000_60%,transparent)] animate-shimmer" />
             <div className="relative rounded-xl bg-background/60 p-6 border border-border/50 backdrop-blur shadow-2xl shadow-black/30">
               <div className="flex items-center gap-2 mb-6">
                 <div className="flex gap-1">
@@ -278,11 +279,11 @@ function Index() {
       <section id="dor" className="mx-auto max-w-6xl px-6 py-24">
         <div className="lg:grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="font-display text-3xl font-extrabold md:text-5xl">Você ainda está <span className="text-primary">enviando mensagem por mensagem?</span></h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+            <h2 className="font-display text-3xl font-extrabold md:text-5xl animate-fade-in-up" style={{ animationDelay: "0.1s" }}>Você ainda está <span className="text-primary">enviando mensagem por mensagem?</span></h2>
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               Enquanto você digita um contato de cada vez, a concorrência já disparou para milhares. O trabalho manual consome seu tempo, esquece follow-ups e deixa dinheiro na mesa.
             </p>
-            <ul className="mt-10 space-y-4">
+            <ul className="mt-10 space-y-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
               {[
                 "Perde horas respondendo as mesmas dúvidas",
                 "Esquece de fazer follow-up e perde a venda",
@@ -296,7 +297,7 @@ function Index() {
               ))}
             </ul>
           </div>
-          <div className="hidden lg:block rounded-2xl bg-card p-6 ring-1 ring-border shadow-xl shadow-black/20">
+          <div className="hidden lg:block rounded-2xl bg-card p-6 ring-1 ring-border shadow-xl shadow-black/20 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             <div className="flex items-center justify-between mb-4">
               <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Sem o Tokfy</span>
               <Badge variant="destructive" className="text-xs">ineficiente</Badge>
@@ -316,12 +317,12 @@ function Index() {
       {/* Como funciona */}
       <section id="como-funciona" className="mx-auto max-w-6xl px-6 py-24 bg-secondary/30">
         <div className="text-center mb-16">
-          <span className="text-primary font-semibold tracking-wider uppercase text-xs">Como funciona</span>
-          <h2 className="mt-4 font-display text-3xl font-extrabold md:text-5xl">Do cadastro à venda, em 3 passos.</h2>
+          <span className="text-primary font-semibold tracking-wider uppercase text-xs animate-fade-in-up" style={{ animationDelay: "0.1s" }}>Como funciona</span>
+          <h2 className="mt-4 font-display text-3xl font-extrabold md:text-5xl animate-fade-in-up" style={{ animationDelay: "0.2s" }}>Do cadastro à venda, em 3 passos.</h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {steps.map((s) => (
-            <article key={s.n} className="rounded-2xl p-8 bg-card ring-1 ring-border relative">
+            <article key={s.n} className="rounded-2xl p-8 bg-card ring-1 ring-border relative animate-fade-in-up hover:-translate-y-2 transition-transform duration-300">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary p-2 shadow-lg shadow-primary/40">
                 <span className="text-xs font-bold text-primary-foreground">{s.n}</span>
               </div>
@@ -336,14 +337,14 @@ function Index() {
       <section id="beneficios" className="mx-auto max-w-6xl px-6 py-24">
         <div className="flex items-center justify-between mb-12">
           <div>
-            <span className="text-primary font-semibold tracking-wider uppercase text-xs">Por que escolher o Tokfy</span>
-            <h2 className="mt-4 font-display text-3xl font-extrabold md:text-5xl">Tudo que você precisa para escalar.</h2>
+            <span className="text-primary font-semibold tracking-wider uppercase text-xs animate-fade-in-up" style={{ animationDelay: "0.1s" }}>Por que escolher o Tokfy</span>
+            <h2 className="mt-4 font-display text-3xl font-extrabold md:text-5xl animate-fade-in-up" style={{ animationDelay: "0.2s" }}>Tudo que você precisa para escalar.</h2>
           </div>
           <Badge>Mais vendido</Badge>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {benefits.map((b) => (
-            <article key={b.t} className="rounded-2xl p-8 bg-card ring-1 ring-border hover:ring-primary/50 transition-colors">
+            <article key={b.t} className="rounded-2xl p-8 bg-card ring-1 ring-border hover:ring-primary/50 transition-colors animate-fade-in-up hover:-translate-y-2 transition-transform duration-300">
               <IconBox icon={b.icon} className="h-6 w-6 text-primary" />
               <h3 className="mt-6 font-display text-lg font-bold">{b.t}</h3>
               <p className="mt-3 text-muted-foreground leading-relaxed">{b.d}</p>
@@ -355,12 +356,12 @@ function Index() {
       {/* Prova social */}
       <section className="mx-auto max-w-6xl px-6 py-24 bg-secondary/30">
         <div className="text-center mb-16">
-          <span className="text-primary font-semibold tracking-wider uppercase text-xs">O que dizem quem já usa</span>
-          <h2 className="mt-4 font-display text-3xl font-extrabold md:text-5xl">Resultados reais.</h2>
+          <span className="text-primary font-semibold tracking-wider uppercase text-xs animate-fade-in-up" style={{ animationDelay: "0.1s" }}>O que dizem quem já usa</span>
+          <h2 className="mt-4 font-display text-3xl font-extrabold md:text-5xl animate-fade-in-up" style={{ animationDelay: "0.2s" }}>Resultados reais.</h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t) => (
-            <article key={t.name} className="rounded-2xl p-8 bg-card ring-1 ring-border relative">
+            <article key={t.name} className="rounded-2xl p-8 bg-card ring-1 ring-border relative animate-fade-in-up hover:-translate-y-2 transition-transform duration-300">
               <div className="absolute top-6 right-6">
                 <Stars rating={t.stars} />
               </div>
@@ -379,8 +380,8 @@ function Index() {
       {/* Planos */}
       <section id="planos" className="mx-auto max-w-6xl px-6 py-24">
         <div className="text-center mb-16">
-          <span className="text-primary font-semibold tracking-wider uppercase text-xs">Escolha seu plano</span>
-          <h2 className="mt-4 font-display text-3xl font-extrabold md:text-5xl">Uma mensalidade, venda ilimitada.</h2>
+          <span className="text-primary font-semibold tracking-wider uppercase text-xs animate-fade-in-up" style={{ animationDelay: "0.1s" }}>Escolha seu plano</span>
+          <h2 className="mt-4 font-display text-3xl font-extrabold md:text-5xl animate-fade-in-up" style={{ animationDelay: "0.2s" }}>Uma mensalidade, venda ilimitada.</h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {[
@@ -409,7 +410,7 @@ function Index() {
               popular: false,
             },
           ].map((p) => (
-            <article key={p.name} className={`rounded-2xl p-8 ring-2 relative flex flex-col ${p.popular ? "bg-primary text-primary-foreground ring-primary scale-105 md:scale-105 shadow-2xl shadow-primary/30" : "bg-card ring-border text-card-foreground"}`}>
+            <article key={p.name} className={`rounded-2xl p-8 ring-2 relative flex flex-col animate-fade-in-up hover:-translate-y-2 transition-transform duration-300 ${p.popular ? "bg-primary text-primary-foreground ring-primary scale-105 md:scale-105 shadow-2xl shadow-primary/30" : "bg-card ring-border text-card-foreground"}`}>
               {p.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-0.5 text-xs font-bold text-primary-foreground">Mais popular</div>
               )}
@@ -441,12 +442,12 @@ function Index() {
       {/* FAQ */}
       <section id="faq" className="mx-auto max-w-3xl px-6 py-24">
         <div className="text-center mb-12">
-          <span className="text-primary font-semibold tracking-wider uppercase text-xs">Perguntas frequentes</span>
-          <h2 className="mt-4 font-display text-3xl font-extrabold md:text-5xl">Tudo claro antes de assinar.</h2>
+          <span className="text-primary font-semibold tracking-wider uppercase text-xs animate-fade-in-up" style={{ animationDelay: "0.1s" }}>Perguntas frequentes</span>
+          <h2 className="mt-4 font-display text-3xl font-extrabold md:text-5xl animate-fade-in-up" style={{ animationDelay: "0.2s" }}>Tudo claro antes de assinar.</h2>
         </div>
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((f, i) => (
-            <AccordionItem key={i} value={`item-${i}`} className="rounded-xl border border-border bg-card mb-3">
+            <AccordionItem key={i} value={`item-${i}`} className="rounded-xl border border-border bg-card mb-3 animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s` }}>
               <AccordionTrigger className="flex flex-col gap-2 text-left">
                 <span className="font-medium">{f.q}</span>
               </AccordionTrigger>
@@ -467,11 +468,11 @@ function Index() {
       <section className="mx-auto max-w-6xl px-6 py-24 relative overflow-hidden rounded-3xl bg-primary text-primary-foreground shadow-2xl shadow-primary/30">
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl -mr-16 -mt-16" />
         <div className="relative z-10 text-center">
-          <h2 className="font-display text-3xl font-extrabold md:text-4xl">Pronto para vender mais todo dia?</h2>
-          <p className="mt-4 text-primary-foreground/90 max-w-xl mx-auto">
+          <h2 className="font-display text-3xl font-extrabold md:text-4xl animate-fade-in-up" style={{ animationDelay: "0.1s" }}>Pronto para vender mais todo dia?</h2>
+          <p className="mt-4 text-primary-foreground/90 max-w-xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             Assine o Tokfy agora pela Kirvano e comece a automação de WhatsApp ainda hoje. Sua primeira venda pode estar a um disparo de distância.
           </p>
-          <div className="mt-10">
+          <div className="mt-10 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             <CtaButton>Quero assinar o Tokfy agora <ArrowRight className="ml-2 h-4 w-4" /></CtaButton>
           </div>
           <p className="mt-6 text-xs text-primary-foreground/70">
@@ -481,7 +482,7 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12 text-center text-xs text-muted-foreground">
+      <footer className="border-t border-border py-12 text-center text-xs text-muted-foreground animate-fade-in" style={{ animationDelay: "0.4s" }}>
         <div className="mx-auto max-w-6xl px-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-2">
             <div className="rounded-lg bg-primary p-1.5">
