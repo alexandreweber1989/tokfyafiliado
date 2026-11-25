@@ -1,5 +1,10 @@
+import type { ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Check, X, Sparkles, Play, AlertTriangle } from "lucide-react";
+import { cn } from "@/lib/utils";
+import {
+  ArrowRight, Check, X, Sparkles, Play, AlertTriangle,
+  Zap, Rocket, Star, Layers,
+} from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CtaButton, SectionHead } from "@/components/landing/ui";
 import {
@@ -25,32 +30,32 @@ const wrap = "mx-auto max-w-6xl px-6";
 function Logo() {
   return (
     <a href="#" className="flex items-center gap-2" aria-label="Tokfy, início">
-      <span className="relative rounded-xl bg-primary p-2 shadow-lg shadow-primary/40">
+      <div className="relative rounded-2xl p-2 bg-gradient-to-br from-primary to-accent shadow-lg shadow-primary/40 animate-pulse-neon">
         <Sparkles className="h-5 w-5 text-primary-foreground" aria-hidden />
-      </span>
-      <span className="font-display text-xl font-extrabold tracking-tight text-foreground">Tokfy</span>
+      </div>
+      <span className="font-display text-xl font-extrabold tracking-tight text-foreground bg-clip-text text-transparent bg-gradient-to-r from-foreground via-neon-primary to-neon-accent">Tokfy</span>
     </a>
   );
 }
 
 function MeshBlob() {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-      <div className="absolute top-0 left-0 w-full h-full mix-blend-[overlay]" />
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/30 blur-[120px] animate-blob" />
-      <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-accent/30 blur-[120px] animate-blob" style={{ animationDelay: "-2s" }} />
-      <div className="absolute bottom-[-10%] left-[20%] w-[50%] h-[50%] rounded-full bg-primary/25 blur-[100px] animate-blob" style={{ animationDelay: "-4s" }} />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[35%] h-[35%] rounded-full bg-accent/30 blur-[100px] animate-blob" style={{ animationDelay: "-1s" }} />
-      <div className="absolute inset-0 bg-mix-blend-[screen] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGZpbHRlciBpZD0iYSI+CiAgICA8ZmVDb2xvck1hdHJpeCBpbj0iU291cmNlR3JhcGhpYyBTb3VyY2VFbGFwaGEiIHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAxIDAgMCAwIDAgMSAwIDAgMCAwIDAgMCAwIDAgMCAxIDAgMCAwIDAiIC8+CiAgICA8ZmVDb2xvcnMgaW49IlNvdXJjZUdyYXBoaWNTb3VyY2VBbHBoYSIgcmVzdWx0PSJvdXRwdXRDb2xvciIgdmFsdWVzPSIwIiAvPgogICAgPGZlQmx1ciBpbj0ib3V0cHV0Q29sb3IiIHN0ZERldmlhdGlvbj0iNCIgLz4KICA8L2ZpbHRlcj4KICA8ZmVQZWFjZSBpbj0iU291cmNlR3JhcGhpYyBTb3VyY2VFbGFwaGEiIGZpbHRlcj0iYSIgc2NhbGU9IjEwMCIgcmVzdWx0PSJvdXRwdXRDb2xvciIgLz4KICA8ZmVDb2xvciBpbj0ib3V0cHV0Q29sb3IiIHJlc3VsdD0ib3V0cHV0Q29sb3IiIHZhbHVlcz0iMCAwIDAgMCAxIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMSIgLz4KICA8ZmVDb252b2x1bGl0ZSBpbj0ib3V0cHV0Q29sb3IiIGluMz0iT3V0cHV0Q29sb3IiIGluMj0iT3V0cHV0Q29sb3IiIHR5cGU9InNjcmVlbiIgcmVzdWx0PSJvdXRwdXRDb2xvciIgLz4KPC9zdmc+')] opacity-40" />
+    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none dots-bg">
+      <div className="absolute top-[-15%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary/25 blur-[140px] animate-blob" />
+      <div className="absolute top-[-10%] right-[-15%] w-[45%] h-[45%] rounded-full bg-accent/25 blur-[120px] animate-blob" style={{ animationDelay: "-2s" }} />
+      <div className="absolute bottom-[-15%] left-[20%] w-[55%] h-[55%] rounded-full bg-primary/20 blur-[110px] animate-blob" style={{ animationDelay: "-4s" }} />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-accent/25 blur-[100px] animate-blob" style={{ animationDelay: "-1s" }} />
+      <div className="absolute inset-0 bg-[image:var(--gradient-neon)] opacity-8 animate-gradient-xy mix-blend-[screen]" />
     </div>
   );
 }
 
 function Marquee() {
   return (
-    <div className="relative overflow-hidden h-6 border-t border-border bg-background py-1">
-      <div className="animate-marquee flex items-center gap-12 px-6 whitespace-nowrap text-xs font-medium text-muted-foreground">
-        {["Produtos em alta · Vídeos UGC com IA · Roteiros e cópias · Narrações com voz · TokPoints · Missões e recompensas · TikTok Shop · Social commerce"].flatMap(() =>
+    <div className="relative h-7 border-y border-border bg-background/50 backdrop-blur-lg">
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background pointer-events-none" />
+      <div className="animate-marquee flex items-center gap-10 px-6 whitespace-nowrap text-xs font-bold tracking-wider text-primary-foreground animate-pulse-neon">
+        {["Produtos em alta", "Vídeos UGC com IA", "Roteiros e cópias", "Narrações com voz", "TokPoints", "Missões e recompensas", "TikTok Shop", "Social commerce"].flatMap(() =>
           ["Produtos em alta", "Vídeos UGC com IA", "Roteiros e cópias", "Narrações com voz", "TokPoints", "Missões e recompensas", "TikTok Shop", "Social commerce"])}
       </div>
     </div>
@@ -59,59 +64,97 @@ function Marquee() {
 
 function Hero() {
   return (
-    <section className={`${wrap} relative pt-20 pb-32 lg:pt-32 lg:pb-40`}>
-      <div className="absolute inset-0 -z-10 mix-blend-[overlay] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGZpbHRlciBpZD0iYSI+CiAgICA8ZmVDb2xvck1hdHJpeCBpbj0iU291cmNlR3JhcGhpYyBTb3VyY2VFbGFwaGEiIHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAxIDAgMCAwIDAgMSAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMSAwIDAgMCAiIC8+CiAgICA8ZmVDb2xvcnMgaW49IlNvdXJjZUdyYXBoaWNTb3VyY2VBbHBoYSIgcmVzdWx0PSJvdXRwdXRDb2xvciIgdmFsdWVzPSIwIiAvPgogICAgPGZlQmx1ciBpbj0ib3V0cHV0Q29sb3IiIHN0ZERldmlhdGlvbj0iNCIgLz4KICA8L2ZpbHRlcj4KICA8ZmVQZWFjZSBpbj0iU291cmNlR3JhcGhpYyBTb3VyY2VFbGFwaGEiIGZpbHRlcj0iYSIgc2NhbGU9IjEwMCIgcmVzdWx0PSJvdXRwdXRDb2xvciIgLz4KICA8ZmVDb2xvciBpbj0ib3V0cHV0Q29sb3IiIHJlc3VsdD0ib3V0cHV0Q29sb3IiIHZhbHVlcz0iMCAwIDAgMCAxIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMSIgLz4KICA8ZmVDb252b2x1bGl0ZSBpbj0ib3V0cHV0Q29sb3IiIGluMz0iT3V0cHV0Q29sb3IiIGluMj0iT3V0cHV0Q29sb3IiIHR5cGU9InNjcmVlbiIgcmVzdWx0PSJvdXRwdXRDb2xvciIgLz4KPC9zdmc+')] opacity-30 bg-[size:40px_40px]" />
-      <div className="grid items-center gap-12 lg:grid-cols-2">
-        <div className="space-y-6 animate-fade-in-up">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white/5 px-3 py-1.5 text-xs font-semibold text-primary backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-primary animate-pulse" /> IA para TikTok Shop, afiliados e social commerce
+    <section className={`${wrap} relative pt-24 pb-40 lg:pt-36 lg:pb-52 overflow-hidden`}>
+      <div className="absolute inset-0 -z-10 mix-blend-[overlay] grid-strong opacity-60" />
+      <div className="grid items-center gap-10 lg:grid-cols-2">
+        <div className="space-y-6">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white/5 px-3 py-1.5 text-xs font-bold tracking-wider text-primary backdrop-blur border-gradient">
+            <div className="h-2 w-2 rounded-full bg-neon-primary animate-pulse-neon shadow-[0_0_10px_var(--neon-primary)]" />
+            IA para TikTok Shop, afiliados e social commerce
           </span>
-          <h1 className="font-display text-5xl font-extrabold leading-tight md:text-7xl">
-            Do produto ao <span className="text-gradient">vídeo que vende.</span>
+          <h1 className="font-display text-6xl font-extrabold leading-[1.05] tracking-tight md:text-8xl lg:text-9xl">
+            Do produto ao vídeo que<span className="block text-transparent bg-clip-text bg-gradient-to-r from-neon-primary via-neon-accent to-neon-green"> vende.</span>
           </h1>
           <p className="max-w-lg text-lg leading-relaxed text-muted-foreground">
             A Tokfy reúne em um só lugar tudo para vender por vídeo: produtos em alta, vídeos UGC com IA, imagens, roteiros, narrações e análise de criativos. Sem aparecer e sem equipe de produção.
           </p>
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <CtaButton className="glow-primary">Começar a criar <ArrowRight className="h-4 w-4" /></CtaButton>
-            <a href="#como-funciona" className="inline-flex items-center justify-center rounded-full border border-border bg-white/5 px-7 py-3.5 font-semibold backdrop-blur hover:bg-white/10 hover:text-foreground transition-colors">Como funciona</a>
+          <div className="flex flex-col gap-5 sm:flex-row items-center">
+            <CtaButton className="glow-neon border-gradient shadow-[0_0_40px_var(--neon-primary)/35] text-primary-foreground">Começar a criar <ArrowRight className="h-5 w-5" /></CtaButton>
+            <a href="#como-funciona" className="inline-flex items-center justify-center rounded-full border border-border bg-white/5 px-8 py-4 font-bold backdrop-blur hover:bg-white/10 hover:text-foreground transition-all hover:scale-105">Como funciona</a>
           </div>
         </div>
-        <div className="mx-auto w-full max-w-xs relative animate-float">
-          <div className="relative aspect-[9/16] overflow-hidden rounded-[2.5rem] bg-card p-6 ring-2 ring-border shadow-2xl shadow-primary/20 glass">
-            <div className="absolute inset-0 bg-[image:var(--gradient-hero)] opacity-15" />
-            <div className="relative flex h-full flex-col justify-between">
-              <div className="flex items-center justify-between text-xs text-muted-foreground"><span>9:16 · UGC</span><span className="rounded-full bg-primary px-2 py-0.5 font-bold text-primary-foreground">IA</span></div>
-              <div className="grid place-items-center"><span className="rounded-full bg-background/70 p-6 backdrop-blur ring-1 ring-border"><Play className="h-10 w-10 text-primary" aria-hidden /></span></div>
-              <div className="space-y-2">
-                <p className="font-display text-sm font-bold">“Quer um visual elegante sem complicação?”</p>
-                <p className="text-xs text-muted-foreground">Gancho · Benefício · CTA</p>
-                <div className="rounded-full bg-primary py-2 text-center text-xs font-bold text-primary-foreground">Clique e confira o seu</div>
+        <div className="mx-auto w-full max-w-md relative animate-float-vertical group">
+          <div className="relative aspect-[9/16] overflow-hidden rounded-[3rem] bg-card p-6 border border-border shadow-2xl shadow-primary/20 glass group-hover:border-primary/60 transition-all duration-500">
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 animate-gradient-xy" />
+            <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-primary/20 blur-2xl animate-pulse-neon" />
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full bg-accent/20 blur-2xl animate-pulse-neon" style={{ animationDelay: "-1.5s" }} />
+            <div className="relative flex h-full flex-col justify-between z-10">
+              <div className="flex items-center justify-between gap-3 px-3 py-2 rounded-lg bg-white/5 backdrop-blur border border-border text-xs font-bold tracking-tight text-primary">
+                <span className="flex items-center gap-1.5"><Zap className="h-3 w-3" /> 9:16 · UGC</span>
+                <span className="rounded-full bg-primary px-2.5 py-0.5 font-bold text-primary-foreground shadow-lg shadow-primary/40">IA</span>
+              </div>
+              <div className="flex-1 grid place-items-center">
+                <span className="relative inline-flex items-center justify-center rounded-full bg-background/70 p-8 backdrop-blur border border-border shadow-2xl shadow-primary/10">
+                  <Play className="h-11 w-11 text-primary" aria-hidden />
+                </span>
+              </div>
+              <div className="px-4 space-y-2">
+                <p className="font-display text-sm font-bold tracking-tight">“Quer um visual elegante sem complicação?”</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider">Gancho · Benefício · CTA</p>
+                <div className="rounded-full bg-primary py-2.5 px-6 text-center text-xs font-bold text-primary-foreground shadow-lg shadow-primary/30">Clique e confira o seu</div>
               </div>
             </div>
           </div>
-          <div className="absolute -bottom-6 -right-4 w-20 h-20 rounded-full bg-accent/40 blur-xl animate-pulse-accent" />
+          <div className="absolute -bottom-8 -right-6 w-24 h-24 rounded-full bg-accent/40 blur-3xl animate-pulse-accent" />
         </div>
       </div>
     </section>
   );
 }
 
-function Card({ children, className }: { children: React.ReactNode; className?: string }) {
+function Card({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <article className={`rounded-2xl p-6 ring-1 ring-border bg-card transition-all duration-300 hover:-translate-y-2 hover:ring-primary/40 hover:shadow-xl hover:shadow-primary/10 glass ${className}`}>
+    <article className={cn(
+      "rounded-3xl p-8 ring-1 ring-border bg-card transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] hover:ring-primary/60 hover:shadow-2xl hover:shadow-primary/20 glass",
+      className
+    )}>
       {children}
     </article>
   );
 }
 
+function SectionStats() {
+  const stats = [
+    { label: "Vídeos gerados", value: "10k+" },
+    { label: "Criadores ativos", value: "2k+" },
+    { label: "Produtos em alta", value: "500+" },
+    { label: "Taxa de conversão", value: "↑ 3.4x" },
+  ];
+  return (
+    <section className={`${wrap} py-20 relative overflow-hidden`}>
+      <div className="absolute inset-0 -z-10 bg-[image:var(--gradient-neon)] opacity-5 blur-[100px]" />
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center">
+        {stats.map((s) => (
+          <div key={s.label} className="group">
+            <div className="flex items-center justify-center gap-2 text-primary mb-1">
+              <Star className="h-5 w-5 animate-spin-reverse" aria-hidden />
+              <span className="font-display text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-neon-primary to-neon-accent">{s.value}</span>
+            </div>
+            <p className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">{s.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Index() {
   return (
-    <main className="min-h-screen bg-background font-sans text-foreground overflow-x-hidden">
+    <main className="min-h-screen bg-background font-sans text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary-foreground">
       <MeshBlob />
       <Marquee />
 
-      <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-border bg-background/60 backdrop-blur-xl">
         <div className={`${wrap} flex items-center justify-between py-4`}>
           <Logo />
           <nav className="hidden items-center gap-7 text-sm font-medium md:flex" aria-label="Seções">
@@ -119,44 +162,50 @@ function Index() {
               <a key={l.href} href={l.href} className="text-muted-foreground hover:text-foreground transition-colors">{l.name}</a>
             ))}
           </nav>
-          <CtaButton className="px-5 py-2 text-sm">Assinar</CtaButton>
+          <CtaButton className="px-5 py-2 text-sm glow-neon border-gradient">Assinar</CtaButton>
         </div>
       </header>
 
       <Hero />
 
+      {/* Estatísticas */}
+      <SectionStats />
+
       {/* Problema */}
       <section className={`${wrap} py-24`}>
-        <div className="grid gap-4 md:grid-cols-3 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+        <div className="grid gap-6 md:grid-cols-3 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
           {["Precisa aparecer na câmera ou contratar quem grave", "Precisa do produto em mãos para mostrar", "Cria um vídeo por vez e testa pouco"].map((t) => (
-            <Card key={t}>
-              <div className="flex items-start gap-3">
-                <X className="mt-0.5 h-5 w-5 shrink-0 text-destructive" aria-hidden />
-                <span className="text-muted-foreground">{t}</span>
+            <Card key={t} className="group">
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 rounded-xl bg-destructive/10 p-3 group-hover:bg-destructive group-hover:text-destructive-foreground transition-colors">
+                  <X className="h-5 w-5" aria-hidden />
+                </div>
+                <span className="text-muted-foreground leading-relaxed">{t}</span>
               </div>
             </Card>
           ))}
         </div>
         <SectionHead
           eyebrow="O problema"
-          title={<>Vender por vídeo exige <span className="text-gradient">volume.</span></>}
+          title={<>Vender por vídeo exige <span className="text-gradient animate-text-reveal">volume.</span></>}
           sub="Gravar, comprar amostras, escrever roteiros e testar dezenas de variações consome tempo e dinheiro. Arquivos ficam espalhados em pastas, celulares e aplicativos."
           className="mt-20 mb-12"
         />
       </section>
 
       {/* Para quem */}
-      <section id="para-quem" className="py-24">
+      <section id="para-quem" className="py-24 relative">
         <div className={wrap}>
-          <SectionHead eyebrow="Para quem é" title="Feita para quem vende nas redes." className="mb-12" />
+          <SectionHead eyebrow="Para quem é" title="Feita para quem vende nas redes." className="mb-16" />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {audiences.map(({ icon: Icon, t, d }, i) => (
-              <Card key={t} className="group" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="inline-flex items-center justify-center rounded-xl bg-secondary p-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+              <Card key={t} className="group relative overflow-hidden" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-blur-full blur-3xl group-hover:bg-primary/20 transition-colors" />
+                <div className="relative z-10 inline-flex items-center justify-center rounded-2xl bg-secondary p-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-500">
                   <Icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" aria-hidden />
                 </div>
-                <h3 className="mt-6 font-display text-lg font-bold">{t}</h3>
-                <p className="mt-3 text-muted-foreground">{d}</p>
+                <h3 className="mt-8 font-display text-lg font-bold">{t}</h3>
+                <p className="mt-4 text-muted-foreground leading-relaxed">{d}</p>
               </Card>
             ))}
           </div>
@@ -164,17 +213,18 @@ function Index() {
       </section>
 
       {/* Recursos */}
-      <section id="recursos" className="py-24 bg-white/3">
+      <section id="recursos" className="py-24 bg-white/3 relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[image:var(--gradient-neon)] opacity-4 blur-[120px]" />
         <div className={wrap}>
-          <SectionHead eyebrow="Recursos" title="Uma central de criação e operação." sub="Tudo que você precisa para pesquisar, criar, organizar e melhorar seus criativos." className="mb-16" />
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <SectionHead eyebrow="Recursos" title="Uma central de criação e operação." sub="Tudo que você precisa para pesquisar, criar, organizar e melhorar seus criativos." className="mb-20" />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {features.map(({ icon: Icon, t, d }, i) => (
               <Card key={t} className="group" style={{ animationDelay: `${i * 0.08}s` }}>
-                <span className="inline-flex items-center justify-center rounded-xl bg-secondary p-3 group-hover:bg-accent group-hover:text-accent-foreground transition-colors mb-1">
-                  <Icon className="h-5 w-5 text-primary group-hover:text-accent-foreground transition-colors" aria-hidden />
-                </span>
-                <h3 className="mt-4 font-display text-base font-bold group-hover:text-foreground transition-colors">{t}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{d}</p>
+                <div className="inline-flex items-center justify-center rounded-2xl bg-secondary p-4 group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-500 mb-4">
+                  <Icon className="h-6 w-6 text-primary group-hover:text-accent-foreground transition-colors" aria-hidden />
+                </div>
+                <h3 className="font-display text-base font-bold group-hover:text-foreground transition-colors">{t}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{d}</p>
               </Card>
             ))}
           </div>
@@ -182,17 +232,18 @@ function Index() {
       </section>
 
       {/* Como funciona */}
-      <section id="como-funciona" className="py-24">
+      <section id="como-funciona" className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[image:var(--gradient-neon)] opacity-4 blur-[120px] rotate-180" />
         <div className={wrap}>
-          <SectionHead eyebrow="Como funciona" title="Seu vídeo em 4 etapas." className="mb-16" />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <SectionHead eyebrow="Como funciona" title="Seu vídeo em 4 etapas." className="mb-20" />
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((s) => (
               <Card key={s.n} className="group" style={{ animationDelay: `${s.n * 0.1}s` }}>
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground font-display text-xl font-extrabold mb-6 group-hover:scale-110 transition-transform">
+                <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-primary-foreground font-display text-2xl font-extrabold mb-8 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform duration-500">
                   {s.n}
                 </div>
                 <h3 className="font-display text-lg font-bold">{s.t}</h3>
-                <p className="mt-3 text-sm text-muted-foreground">{s.d}</p>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{s.d}</p>
               </Card>
             ))}
           </div>
@@ -201,78 +252,119 @@ function Index() {
 
       {/* Exemplos + análise */}
       <section className={`${wrap} py-24`}>
-        <div className="grid gap-6 lg:grid-cols-3 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+        <div className="grid gap-8 lg:grid-cols-3 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
           {examples.map((e) => (
-            <article key={e.product} className="rounded-2xl p-7 ring-1 ring-border bg-card transition-all hover:-translate-y-2 hover:ring-primary/40 hover:shadow-xl hover:shadow-primary/10 glass">
-              <span className="text-xs font-semibold uppercase tracking-wider text-primary">{e.product}</span>
-              <p className="mt-3 font-display font-bold">{e.hook}</p>
-              <ol className="mt-5 space-y-2 text-sm text-muted-foreground">
-                {e.scenes.map((s, i) => <li key={s} className="flex gap-3"><span className="font-bold text-foreground">{i + 1}.</span>{s}</li>)}
+            <article key={e.product} className="rounded-3xl p-8 ring-1 ring-border bg-card transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] hover:ring-primary/60 hover:shadow-2xl hover:shadow-primary/20 glass">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-xs font-bold uppercase tracking-wider text-primary">{e.product}</span>
+                <div className="w-2 h-2 rounded-full bg-neon-primary shadow-[0_0_10px_var(--neon-primary)] animate-pulse-neon" />
+              </div>
+              <p className="mt-3 font-display font-bold text-foreground">{e.hook}</p>
+              <ol className="mt-6 space-y-3 text-sm text-muted-foreground">
+                {e.scenes.map((s, i) => (
+                  <li key={s} className="flex gap-3 items-start">
+                    <span className="shrink-0 font-bold text-primary">{i + 1}.</span>{s}
+                  </li>
+                ))}
               </ol>
             </article>
           ))}
-          <article className="rounded-2xl p-7 ring-2 ring-primary/50 bg-primary/5 transition-all hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 glass">
-            <span className="text-xs font-semibold uppercase tracking-wider text-primary">Análise de criativo</span>
-            <ul className="mt-4 space-y-3">
+          <article className="rounded-3xl p-8 ring-2 ring-primary/60 bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 glass border-gradient">
+            <div className="mb-4 flex items-center gap-2">
+              <Layers className="h-5 w-5 text-primary animate-spin-reverse" aria-hidden />
+              <span className="text-xs font-bold uppercase tracking-wider text-primary">Análise de criativo</span>
+            </div>
+            <ul className="mt-4 space-y-4">
               {analysis.map((a) => (
-                <li key={a.k} className="flex items-center justify-between text-sm">
-                  <span>{a.k}</span>
-                  <span className={a.ok ? "font-semibold text-primary" : "font-semibold text-destructive"}>{a.v}</span>
+                <li key={a.k} className="flex items-center justify-between py-2 border-b border-border/50 last:border-0">
+                  <span className="text-sm">{a.k}</span>
+                  <span className={cn("font-bold", a.ok ? "text-primary" : "text-destructive")}>{a.v}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-5 rounded-xl bg-secondary p-4 text-sm text-muted-foreground">Recomendação: mostrar o produto nos primeiros segundos e incluir uma chamada mais objetiva.</p>
+            <p className="mt-6 rounded-2xl bg-secondary p-5 text-sm text-muted-foreground leading-relaxed">Recomendação: mostrar o produto nos primeiros segundos e incluir uma chamada mais objetiva.</p>
           </article>
         </div>
       </section>
 
       {/* Planos */}
-      <section id="planos" className="py-24 bg-white/3">
+      <section id="planos" className="py-24 bg-white/3 relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[image:var(--gradient-neon)] opacity-4 blur-[120px] rotate-180" />
         <div className={wrap}>
-          <SectionHead eyebrow="Planos" title="Escolha seu acesso." sub="Os planos variam em duração, resolução e recursos. Confira as condições atuais na página de compra." className="mb-16" />
-          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+          <SectionHead eyebrow="Planos" title="Escolha seu acesso." sub="Os planos variam em duração, resolução e recursos. Confira as condições atuais na página de compra." className="mb-20" />
+          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
             {plans.map((p) => (
-              <article key={p.name} className={`relative flex flex-col rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 ${p.popular ? "bg-primary/10 ring-2 ring-primary shadow-xl shadow-primary/25" : "bg-card ring-1 ring-border glass"}`}>
-                {p.popular && <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-0.5 text-xs font-bold text-primary-foreground shadow-lg shadow-primary/40">Mais completo</span>}
-                <h3 className={`font-display text-2xl font-bold ${p.popular ? "text-primary" : "text-foreground"}`}>{p.name}</h3>
+              <article key={p.name} className={`relative flex flex-col rounded-[3rem] p-10 transition-all duration-500 hover:-translate-y-4 hover:scale-[1.02] ${p.popular ? "bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/40 shadow-2xl shadow-primary/30" : "bg-card ring-1 ring-border glass hover:border-primary/60"}`}>
+                {p.popular && <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-primary-foreground shadow-lg shadow-primary/50">Mais completo</span>}
+                <div className="flex items-center gap-2 mb-3">
+                  {p.popular && <Star className="h-4 w-4 fill-primary-foreground animate-spin-reverse" aria-hidden />}
+                  <h3 className={`font-display text-3xl font-bold ${p.popular ? "text-transparent bg-clip-text bg-gradient-to-r from-neon-primary to-neon-accent" : "text-foreground"}`}>{p.name}</h3>
+                </div>
                 <p className="mt-1 text-sm text-muted-foreground">{p.desc}</p>
-                <ul className="my-8 flex-1 space-y-3">
-                  {p.items.map((it) => <li key={it} className="flex gap-2 text-sm"><Check className="h-4 w-4 shrink-0 text-primary" aria-hidden />{it}</li>)}
+                <ul className="my-10 flex-1 space-y-4">
+                  {p.items.map((it) => (
+                    <li key={it} className="flex gap-3 text-sm">
+                      <div className="shrink-0 rounded-full bg-primary/10 p-2">
+                        <Check className="h-4 w-4 text-primary" aria-hidden />
+                      </div>
+                      {it}
+                    </li>
+                  ))}
                 </ul>
-                <CtaButton secondary={!p.popular} className={`w-full ${p.popular ? "" : "border-border"}`}>Ver preço e assinar</CtaButton>
+                <CtaButton secondary={!p.popular} className={`w-full ${p.popular ? "glow-neon border-gradient text-primary-foreground shadow-[0_0_30px_var(--neon-primary)/35]" : "border-border"}`}>Ver preço e assinar</CtaButton>
               </article>
             ))}
           </div>
-          <p className="mt-8 text-center text-xs text-muted-foreground">Antes de assinar, confira: limite de vídeos, qualidade de exportação, uso comercial e marca d’água.</p>
+          <p className="mt-10 text-center text-xs text-muted-foreground">Antes de assinar, confira: limite de vídeos, qualidade de exportação, uso comercial e marca d’água.</p>
         </div>
       </section>
 
       {/* Para quem vale */}
       <section className={`${wrap} py-24`}>
         <SectionHead eyebrow="Transparência" title="A Tokfy é para você?" className="mb-12" />
-        <div className="grid gap-6 md:grid-cols-2">
-          <Card>
-            <h3 className="font-display text-lg font-bold text-primary">Vale a pena se você…</h3>
-            <ul className="mt-5 space-y-3">{fitYes.map((t) => <li key={t} className="flex gap-2"><Check className="h-5 w-5 shrink-0 text-primary" aria-hidden />{t}</li>)}</ul>
+        <div className="grid gap-8 md:grid-cols-2">
+          <Card className="group">
+            <div className="flex items-center gap-2 mb-6">
+              <Check className="h-5 w-5 text-primary" aria-hidden />
+              <h3 className="font-display text-lg font-bold text-primary">Vale a pena se você…</h3>
+            </div>
+            <ul className="space-y-3">{fitYes.map((t) => (
+              <li key={t} className="flex gap-3 items-start">
+                <div className="shrink-0 rounded-full bg-primary/10 p-2"><Check className="h-4 w-4 text-primary" aria-hidden /></div>
+                {t}
+              </li>
+            ))}</ul>
           </Card>
-          <Card>
-            <h3 className="font-display text-lg font-bold text-muted-foreground">Talvez não seja para você se…</h3>
-            <ul className="mt-5 space-y-3 text-muted-foreground">{fitNo.map((t) => <li key={t} className="flex gap-2"><X className="h-5 w-5 shrink-0" aria-hidden />{t}</li>)}</ul>
+          <Card className="group border-destructive/40 hover:border-destructive/80 transition-colors">
+            <div className="flex items-center gap-2 mb-6">
+              <X className="h-5 w-5 text-destructive" aria-hidden />
+              <h3 className="font-display text-lg font-bold text-muted-foreground">Talvez não seja para você se…</h3>
+            </div>
+            <ul className="space-y-3 text-muted-foreground">{fitNo.map((t) => (
+              <li key={t} className="flex gap-3 items-start">
+                <div className="shrink-0 rounded-full bg-destructive/10 p-2"><X className="h-4 w-4 text-destructive" aria-hidden /></div>
+                {t}
+              </li>
+            ))}</ul>
           </Card>
         </div>
-        <div className="mt-8 flex gap-3 rounded-2xl border border-border bg-white/5 p-6 text-sm text-muted-foreground backdrop-blur">
+        <div className="mt-10 flex gap-3 rounded-[2rem] border border-border bg-white/10 p-6 text-sm text-muted-foreground backdrop-blur-xl">
           <AlertTriangle className="h-5 w-5 shrink-0 text-primary" aria-hidden />
           <p>A IA pode cometer erros e alterar detalhes do produto, e nenhuma ferramenta garante vendas. Os melhores resultados vêm de pesquisa, bons prompts, revisão humana, testes e constância.</p>
         </div>
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-3xl px-6 py-24">
-        <SectionHead eyebrow="Perguntas frequentes" title="Tudo claro antes de assinar." className="mb-12" />
+      <section id="faq" className="mx-auto max-w-3xl px-6 py-24 relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[image:var(--gradient-neon)] opacity-4 blur-[120px] rotate-180" />
+        <SectionHead eyebrow="Perguntas frequentes" title="Tudo claro antes de assinar." className="mb-16" />
         <Accordion type="single" collapsible>
           {faqs.map((f, i) => (
-            <AccordionItem key={f.q} value={f.q} className={`mb-3 rounded-xl border border-border bg-card transition-all hover:shadow-xl hover:shadow-primary/5 glass ${i % 2 === 0 ? "border-primary/20" : ""}`}>
-              <AccordionTrigger className="text-left font-medium">{f.q}</AccordionTrigger>
+            <AccordionItem key={f.q} value={f.q} className={`mb-4 rounded-[2rem] border border-border bg-card transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/60 glass ${i % 2 === 0 ? "border-primary/30" : ""}`}>
+              <AccordionTrigger className="text-left font-medium group">
+                {f.q}
+                <ArrowRight className="ml-2 h-4 w-4 shrink-0 opacity-50 group-hover:opacity-100 transition-opacity" aria-hidden />
+              </AccordionTrigger>
               <AccordionContent className="text-sm leading-relaxed text-muted-foreground">{f.a}</AccordionContent>
             </AccordionItem>
           ))}
@@ -280,24 +372,29 @@ function Index() {
       </section>
 
       {/* CTA final */}
-      <section className={`relative overflow-hidden ${wrap} pb-24`}>
-        <div className="absolute inset-0 -z-10 bg-[image:var(--gradient-hero)] opacity-10 blur-[80px]" />
-        <div className="rounded-[3rem] p-8 text-center ring-1 ring-primary/40 shadow-2xl shadow-primary/20 glass md:p-16">
-          <h2 className="font-display text-3xl font-extrabold md:text-5xl">Comece a criar vídeos <span className="text-gradient">hoje.</span></h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Encontre o produto, gere o vídeo, publique e teste. Tudo em um só lugar.</p>
-          <CtaButton className="mt-8 w-full md:w-auto glow-primary">Quero assinar a Tokfy <ArrowRight className="h-4 w-4" /></CtaButton>
+      <section className={`relative overflow-hidden ${wrap} pb-32`}>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/20 to-accent/20 blur-[100px]" />
+        <div className="relative rounded-[4rem] p-10 text-center ring-1 ring-primary/60 shadow-2xl shadow-primary/30 glass md:p-20 border-gradient">
+          <div className="flex justify-center gap-4 mb-8">
+            <Rocket className="h-8 w-8 text-neon-accent animate-spin-reverse" aria-hidden />
+            <h2 className="font-display text-4xl font-extrabold tracking-tight md:text-6xl">Comece a criar vídeos<span className="block text-transparent bg-clip-text bg-gradient-to-r from-neon-primary to-neon-accent"> hoje.</span></h2>
+            <Star className="h-8 w-8 text-neon-purple animate-spin-reverse" aria-hidden />
+          </div>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">Encontre o produto, gere o vídeo, publique e teste. Tudo em um só lugar.</p>
+          <CtaButton className="mt-10 w-full md:w-auto glow-neon border-gradient shadow-[0_0_40px_var(--neon-primary)/40] text-primary-foreground text-lg px-10 py-4">Quero assinar a Tokfy <ArrowRight className="h-5 w-5" /></CtaButton>
         </div>
       </section>
 
-      <footer className="border-t border-border py-12">
-        <div className={`${wrap} flex flex-col gap-6 md:flex-row md:items-center md:justify-between`}>
-          <div className="flex items-center gap-2">
+      <footer className="border-t border-border py-16 relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[image:var(--gradient-neon)] opacity-4 blur-[100px]" />
+        <div className={`${wrap} flex flex-col gap-8 md:flex-row md:items-center md:justify-between`}>
+          <div className="flex items-center gap-3">
             <Logo />
           </div>
           <p className="text-xs text-muted-foreground">Pagamento e entrega processados pela{" "}
-            <a href={KIRVANO_LINK} target="_blank" rel="noopener noreferrer" className="text-foreground hover:underline transition-colors">Kirvano</a>.
+            <a href={KIRVANO_LINK} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">Kirvano</a>.
           </p>
-          <div className="flex gap-4 text-xs text-muted-foreground">
+          <div className="flex gap-6 text-xs text-muted-foreground">
             <span>Tokfy · IA para social commerce</span>
           </div>
         </div>
