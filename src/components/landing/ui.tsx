@@ -6,7 +6,7 @@ export function CtaButton({ children, secondary = false, className }: { children
   return (
     <a href={KIRVANO_LINK} target="_blank" rel="noopener noreferrer"
       className={cn("inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-bold transition hover:scale-105",
-        secondary ? "border border-border bg-background text-foreground hover:bg-secondary" : "bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:bg-primary/90",
+        secondary ? "border border-white/25 bg-white/5 text-foreground hover:bg-white/10 hover:text-foreground transition-all" : "bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:bg-primary/90",
         className)}>
       {children}
     </a>

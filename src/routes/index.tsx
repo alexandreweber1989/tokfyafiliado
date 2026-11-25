@@ -80,7 +80,7 @@ function Hero() {
           </p>
           <div className="flex flex-col gap-5 sm:flex-row items-center">
             <CtaButton className="glow-neon border-gradient shadow-[0_0_40px_var(--neon-primary)/35] text-primary-foreground">Começar a criar <ArrowRight className="h-5 w-5" /></CtaButton>
-            <a href="#como-funciona" className="inline-flex items-center justify-center rounded-full border border-border bg-white/5 px-8 py-4 font-bold backdrop-blur hover:bg-white/10 hover:text-foreground transition-all hover:scale-105">Como funciona</a>
+            <a href="#como-funciona" className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-8 py-4 font-bold backdrop-blur hover:bg-white/10 hover:text-foreground transition-all hover:scale-105">Como funciona</a>
           </div>
         </div>
         <div className="mx-auto w-full max-w-md relative animate-float-vertical group">
