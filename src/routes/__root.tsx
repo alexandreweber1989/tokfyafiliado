@@ -63,7 +63,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-white/25 bg-white/5 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-white/10"
+            className="inline-flex items-center justify-center rounded-md border border-white/35 bg-white/10 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-white/25"
           >
             Go home
           </a>
