@@ -13,9 +13,9 @@ export function CtaButton({ children, secondary = false, className }: { children
   );
 }
 
-export function SectionHead({ eyebrow, title, sub }: { eyebrow: string; title: ReactNode; sub?: string }) {
+export function SectionHead({ eyebrow, title, sub, className }: { eyebrow: string; title: ReactNode; sub?: string; className?: string }) {
   return (
-    <div className="mx-auto mb-14 max-w-2xl text-center">
+    <div className={cn("mx-auto mb-14 max-w-2xl text-center", className)}>
       <span className="text-xs font-semibold uppercase tracking-wider text-primary">{eyebrow}</span>
       <h2 className="mt-4 font-display text-3xl font-extrabold md:text-5xl">{title}</h2>
       {sub && <p className="mt-5 text-lg text-muted-foreground">{sub}</p>}

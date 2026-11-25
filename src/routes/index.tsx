@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode, CSSProperties } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import {
@@ -112,12 +112,12 @@ function Hero() {
   );
 }
 
-function Card({ children, className }: { children: ReactNode; className?: string }) {
+function Card({ children, className, style }: { children: ReactNode; className?: string; style?: CSSProperties }) {
   return (
     <article className={cn(
       "rounded-3xl p-8 ring-1 ring-border bg-card transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] hover:ring-primary/60 hover:shadow-2xl hover:shadow-primary/20 glass",
       className
-    )}>
+    )} style={style}>
       {children}
     </article>
   );
@@ -238,7 +238,7 @@ function Index() {
           <SectionHead eyebrow="Como funciona" title="Seu vídeo em 4 etapas." className="mb-20" />
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((s) => (
-              <Card key={s.n} className="group" style={{ animationDelay: `${s.n * 0.1}s` }}>
+              <Card key={s.n} className="group" style={{ animationDelay: `${Number(s.n) * 0.1}s` }}>
                 <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-primary-foreground font-display text-2xl font-extrabold mb-8 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform duration-500">
                   {s.n}
                 </div>
