@@ -162,7 +162,7 @@ function Index() {
               <a key={l.href} href={l.href} className="text-muted-foreground hover:text-foreground transition-colors">{l.name}</a>
             ))}
           </nav>
-          <CtaButton className="px-5 py-2 text-sm glow-neon border-gradient">Assinar</CtaButton>
+          <CtaButton className="px-5 py-2 text-sm glow-neon">Assinar</CtaButton>
         </div>
       </header>
 
@@ -381,7 +381,7 @@ function Index() {
             <Star className="h-8 w-8 text-neon-purple animate-spin-reverse" aria-hidden />
           </div>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">Encontre o produto, gere o vídeo, publique e teste. Tudo em um só lugar.</p>
-          <CtaButton className="mt-10 w-full md:w-auto glow-neon border-gradient shadow-[0_0_40px_var(--neon-primary)/40] text-primary-foreground text-lg px-10 py-4">Quero assinar a Tokfy <ArrowRight className="h-5 w-5" /></CtaButton>
+          <CtaButton className="mt-10 w-full md:w-auto glow-neon shadow-[0_0_40px_var(--neon-primary)/40] text-primary-foreground text-lg px-10 py-4">Quero assinar a Tokfy <ArrowRight className="h-5 w-5" /></CtaButton>
         </div>
       </section>
 
